@@ -33,6 +33,7 @@
 			<span class="yourChoice">{{favoriteDrink}}</span>
 		</div>
 	</div>
+
 	<div class="container" ng-controller="index">
 		<div class="chooseRow">
 			<span class="headChoice">Choose your favorite color </span>
@@ -46,6 +47,7 @@
 			<span class="colorExample" ng-class="{red: isRed(), blue: isBlue(), yellow: isYellow(), green: isGreen()}"></span>
 		</div>
 	</div>
+
 	<div class="container" ng-controller="index">
 		<table>
 			<thead>
@@ -62,6 +64,7 @@
 			</tbody>
 		</table>
 	</div>
+
 	<div class="container" ng-controller="index">
 		<div><input type="checkbox" ng-model="isFirstElementVisible" /> Is first element visible</div>
 		<div><input type="checkbox" ng-model="isSecondElementVisible" /> Is second element visible</div>
@@ -71,7 +74,16 @@
 	    {{message}}
 	    <div ng-if="true">
 	        <input type="text" ng-model="message" />
-	        {{message}}
+	        {{message}}</div>
+	</div>
+
+	<div class="container" ng-controller="index">
+		<div>
+			<span>{{hint}}</span>
+		</div>
+	</div>
+	<div ng-controller="index">
+	    {{product}}
 	</div>
 	   
 </div>
