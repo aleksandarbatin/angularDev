@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body ng-app="root">
+	<h1 class="title">Angular JS</h1>
+	<div class="container" ng-controller="index">
+		<div class="chooseRow">
+			<span class="headChoice">Write few words:</span> 
+			<input type="text" ng-model="favoriteWords" />
+			<span class="yourChoice">{{favoriteWords}}</span>
+		</div>
+		<div class="chooseRow" ng-model="favoriteMeal">
+			<span class="headChoice">Choose your breakfast:</span>
+			<input type="radio" name="fc" value="Cheese pie" ng-model="favoriteMeal">Cheese pie</input>
+			<input type="radio" name="fc" value="Cornflakes" ng-model="favoriteMeal">Cornflakes</input>
+			<input type="radio" name="fc" value="Nutribullet" ng-model="favoriteMeal">Nutribullet</input>
+			<input type="radio" name="fc" value="Blue" ng-model="favoriteMeal">Blue</input>
+			<span class="yourChoice">{{favoriteMeal}}</span>
+		</div>
+		<div class="chooseRow">
+			<span class="headChoice">Choose your drink:</span>
+			<select ng-model="favoriteDrink">
+				<option value="Coffee" >Cofee</option>
+				<option value="Tea">Tea</option>
+				<option value="Milk">Milk</option>
+				<option value="Fresh water">Fresh Water</option>
+			</select>
+			<span class="yourChoice">{{favoriteDrink}}</span>
+		</div>
+	</div>
+	<div class="container" ng-controller="index">
+		<div class="chooseRow">
+			<span class="headChoice">Choose your favorite color </span>
+			<ul>
+				<li>1 = Red</li>
+				<li>2 = Blue</li>
+				<li>3 = Green</li>
+				<li>4 = Yellow</li>
+			</ul>
+			<input type="text" ng-model="value" />
+			<span class="colorExample" ng-class="{red: isRed(), blue: isBlue(), yellow: isYellow(), green: isGreen()}"></span>
+		</div>
+	</div>
+	<div class="container" ng-controller="index">
+		<table>
+			<thead>
+				<tr>
+					<td>Id</td>
+					<td>Name</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="product in products" ng-class="{oddRow: $odd}">
+			        <td>{{product.id}}</td>
+			        <td>{{product.name}}</td>
+			    </tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="container" ng-controller="index">
+		<div><input type="checkbox" ng-model="isFirstElementVisible" /> Is first element visible</div>
+		<div><input type="checkbox" ng-model="isSecondElementVisible" /> Is second element visible</div>
+		<div ng-show="isFirstElementVisible">First Element</div>
+		<div ng-show="isSecondElementVisible">Second Element</div>
+		 <input type="text" ng-model="message" />
+	    {{message}}
+	    <div ng-if="true">
+	        <input type="text" ng-model="message" />
+	        {{message}}
+	</div>
+	   
+</div>
+	<script src="main.js"></script>
+</body>
+</html>
