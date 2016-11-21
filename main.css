@@ -65,3 +65,13 @@ body,html {
 .oddRow {
 	background-color: grey;
 }
+
+.likesTable {
+	border: 1px solid black;
+}
+
+.likesTable td {
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	padding: 1rem;
+}
