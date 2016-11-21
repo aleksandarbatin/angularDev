@@ -26,12 +26,12 @@ var myApp = angular.module("root", ["services"]);
     	];
 
     	$scope.tech = tech; 
-    	$scope.plusLikes = 	function(tech){
-    		tech.likes++;	
+    	$scope.plusLikes = 	function(techno){
+    		techno.likes++;	
     	}
 
-    	$scope.plusDislikes = 	function(tech){
-    		tech.dislikes++;	
+    	$scope.plusDislikes = 	function(techno){
+    		techno.dislikes++;	
     	}
 		
         $scope.favoriteWords;
