@@ -6,30 +6,45 @@ body,html {
 	font-family: Verdana;
 	font-size: 10px;
 }
+
 .title {
 	text-align: center;
+	font-size: 3rem;
+}
+
+.subtitle {
+	text-align: center;
+	font-size: 2.5rem;
 }
 
 .container {
 	width: 70%;
 	margin: 2rem auto;
-	padding: 2rem;
+	padding: 2rem 2rem 4.5rem;
 	overflow: hidden;
 	background-color: #f0f0f0;
 }
+
 .chooseRow {
 	margin-bottom: 3.5rem;
 	font-size: 1.6rem;
 }
 
+.chooseColor {
+	float: left;
+	width: 50%;
+}
+
 .yourChoice {
 	display: block;
+	height: 3rem;
 	padding: 0.5rem;
 	color: #475767;
 	font-weight: bold;
 	border: 1px solid #523888;
 	text-align: center;
 }
+
 .headChoice {
 	display: inline-block;
 	text-transform: uppercase;
@@ -55,10 +70,12 @@ body,html {
 	background-color: green;
 	font-style: italic;
 }
+
 .colorExample {
 	display: block;
-	width: 8rem;
-	height: 8rem;
+	float: right;
+	width: 50%;
+	height: 15rem;
 	margin-top: 2rem;
 }
 
@@ -66,12 +83,38 @@ body,html {
 	background-color: grey;
 }
 
-.likesTable {
+.likesTable, .filterTable,.dogsTable {
+	width: 50%;
+	margin: 0 auto;
 	border: 1px solid black;
+	font-size: 1.4rem;
 }
 
-.likesTable td {
+.likesTable td, .filterTable td {
 	border-top: 1px solid grey;
 	border-bottom: 1px solid grey;
 	padding: 1rem;
+	font-size: 1.4rem
+}
+
+.setRows, .setColumn, .searchRow, .showHide {
+	text-align: center;
+}
+
+.arrowUp {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 10px solid black;
+}
+
+.arrowDown {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 10px solid black;
 }

@@ -7,13 +7,17 @@
 	<link rel="stylesheet" href="main.css">
 </head>
 <body ng-app="root">
+
 	<h1 class="title">Angular JS</h1>
+
 	<div class="container" ng-controller="index">
+
 		<div class="chooseRow">
 			<span class="headChoice">Write few words:</span> 
 			<input type="text" ng-model="favoriteWords" />
 			<span class="yourChoice">{{favoriteWords}}</span>
 		</div>
+
 		<div class="chooseRow" ng-model="favoriteMeal">
 			<span class="headChoice">Choose your breakfast:</span>
 			<input type="radio" name="fc" value="Cheese pie" ng-model="favoriteMeal">Cheese pie</input>
@@ -22,6 +26,7 @@
 			<input type="radio" name="fc" value="Blue" ng-model="favoriteMeal">Blue</input>
 			<span class="yourChoice">{{favoriteMeal}}</span>
 		</div>
+
 		<div class="chooseRow">
 			<span class="headChoice">Choose your drink:</span>
 			<select ng-model="favoriteDrink">
@@ -35,8 +40,8 @@
 	</div>
 
 	<div class="container" ng-controller="index">
-		<div class="chooseRow">
-			<span class="headChoice">Choose your favorite color </span>
+		<div class="chooseRow chooseColor">
+			<span class="headChoice">Choose your favorite color</span>
 			<ul>
 				<li>1 = Red</li>
 				<li>2 = Blue</li>
@@ -44,8 +49,8 @@
 				<li>4 = Yellow</li>
 			</ul>
 			<input type="text" ng-model="value" />
-			<span class="colorExample" ng-class="{red: isRed(), blue: isBlue(), yellow: isYellow(), green: isGreen()}"></span>
 		</div>
+		<span class="colorExample" ng-class="{red: isRed(), blue: isBlue(), yellow: isYellow(), green: isGreen()}"></span>
 	</div>
 
 	<div class="container" ng-controller="index">
@@ -104,7 +109,9 @@
 			</tbody>
 		</table>
 	</div>
-		<div class="container" ng-controller="index">
+
+	<div class="container" ng-controller="index">
+		<h3 class="subtitle">Events</h3>
 		<table class="likesTable">
 			<thead>
 				<tr>
@@ -126,6 +133,53 @@
 				</tr>
 			</tbody>
 		</table>
+	</div>
+
+	<div class="container" ng-controller="index">
+		<h3 class="subtitle">Filters</h3>
+		<div class="setRows">Rows to display:<input type="number" step="1" min="0" max="5" ng-model="rowLimit" /></div>
+		<br /> <br />
+		<div class="setColumn">Order by: 
+			<select ng-model="sortColumn">
+				<option value="name">Name ASC</option>
+				<option value="gender">Gender ASC</option>
+				<option value="dateofBirth">Date of Birth</option>
+				<option value="-salary">Salary DESC</option>
+			</select>
+		</div>
+		<br /> <br />
+		<div class="searchRow">
+			Search: <input type="text" placeholder="search employees" ng-model="searchText" /> 	
+		</div>
+		<br /> <br />
+		<table class="filterTable">
+			<thead>
+				<tr>
+					<th ng-click="sortData('name')">Name <div ng-class="getSortClass('name')"></div></th>
+					<th ng-click="sortData('dateofBirth')">Date of Birth<div ng-class="getSortClass('dateofBirth')"></div></th>
+					<th ng-click="sortData('gender')">Gender<div ng-class="getSortClass('gender')"></div></th>
+					<th ng-click="sortData('salary')">Salary (number)<div ng-class="getSortClass('salary')"></div></th>
+					<th ng-click="sortData('salary')" ng-hide="hideSalary">Salary (currency)<div ng-class="getSortClass('salary')"></div></th>
+				</tr>
+			</thead>
+			<tbody> 
+				<tr ng-repeat="worker in workers | limitTo: rowLimit | orderBy: sortColumn:reverseSort | filter: searchText">
+					<td>{{worker.name | uppercase}}</td>
+					<td>{{worker.dateofBirth | date:"dd/MM/yyyy"}}</td>
+					<td>{{worker.gender | lowercase}}</td>
+					<td>{{worker.salary | number: 2}}</td>
+					<td ng-hide="hideSalary">{{worker.salary | currency:"£":1}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<div class="showHide">
+			<input type="checkbox" ng-model="hideSalary"/> Hide Salary
+		</div>
+	</div>
+	<div class="container" ng-controller="index">
+		<h3 class="subtitle">Include from another HTML page</h3>
+		<div ng-include="'DogsTable.htm'"></div>
 	</div>
 	   
 </div>
