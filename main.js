@@ -78,6 +78,7 @@ var myApp = angular.module("root", ["services"]);
 		]
 
 		$scope.dogs = dogs;
+		$scope.dogsView = "DogsTable.html";
 
 		$scope.workers = workers;
 		$scope.rowLimit = 3;

@@ -179,7 +179,15 @@
 	</div>
 	<div class="container" ng-controller="index">
 		<h3 class="subtitle">Include from another HTML page</h3>
-		<div ng-include="'DogsTable.htm'"></div>
+		<div class="setRows">
+		Select view:
+			<select ng-model="dogsView">
+				<option value="DogsTable.html">Table</option>
+				<option value="DogsList.html">List</option>
+			</select>
+			<br/><br/>
+		</div>
+		<div ng-include="dogsView"></div>
 	</div>
 	   
 </div>
